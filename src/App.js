@@ -3,11 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 import Movie from './Movie';
 
+const movies = [
+  "Matrix",
+  "Full Metal Jacket",
+  "Oldboy",
+  "Star Wars"
+];
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <Movie/>
+      <Movie title={movies[0]}/>
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

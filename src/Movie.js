@@ -4,10 +4,11 @@ import './Movie.css';
 
 class Movie extends Component {
     render() {
+        console.log(this.props);
         return (
             <div>
                 <MoviePoster></MoviePoster>
-                <h1>Hello this is a moview </h1>
+                <h1>{this.props.title} </h1>
             </div>
         )
     }
