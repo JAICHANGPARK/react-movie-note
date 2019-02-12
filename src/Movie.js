@@ -8,6 +8,7 @@ class Movie extends Component {
         return (
             <div>
                 <MoviePoster></MoviePoster>
+                {/* jsx의 경우 명령어를 실행하려면 꼭 괄호를 넣어야함. */}
                 <h1>{this.props.title} </h1>
             </div>
         )
