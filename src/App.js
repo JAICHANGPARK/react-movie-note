@@ -12,25 +12,32 @@ const movieTitles = [
 
 const movieImage =[];
 
+const movies =[
+  {
+    
+    title :"Matrix",
+    poster : "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+  },
+  {
+    title :"Matrix",
+    poster : "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+  },
+  {
+    title :"Matrix",
+    poster : "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+  },
+
+];
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <Movie title={movieTitles[0]}/>
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header> */}
+      {movies.map((movie, index) =>{
+
+        return <Movie title={movie.title} poster ={movie.poster} key={index}/>
+      })}
+     
       </div>
     );
   }
