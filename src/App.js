@@ -34,22 +34,22 @@ const movieImage = [];
 class App extends Component {
 
   state = {
-    greeting: "Hello",
-    movies: [
-      {
+    // greeting: "Hello",
+    // movies: [
+    //   {
 
-        title: "Matrix",
-        poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
-      },
-      {
-        title: "Matrix",
-        poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
-      },
-      {
-        title: "Matrix",
-        poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
-      },
-    ],
+    //     title: "Matrix",
+    //     poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+    //   },
+    //   {
+    //     title: "Matrix",
+    //     poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+    //   },
+    //   {
+    //     title: "Matrix",
+    //     poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+    //   },
+    // ],
 
   }
 
@@ -63,12 +63,19 @@ class App extends Component {
     setTimeout(() => {
       this.setState({
         movies: [
-          ...this.state.movies,
           {
             title: "Matrix",
             poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
-          }
-        ]
+          },
+          {
+            title: "Matrix",
+            poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+          },
+          {
+            title: "Matrix",
+            poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+          },
+        ],
       })
       //State는 직접 변경할 수 없고 setState를 통해 데이터 변경 처리 가능 .
       this.setState({
@@ -78,13 +85,20 @@ class App extends Component {
     }, 5000)
   }
 
+  _renderMovies =() =>{
+    const movies = this.state.movies.map((movie, index) => {
+      return <Movie title={movie.title} poster={movie.poster} key={index} />
+    })
+    return movies
+  }
+
   render() {
     return (
       <div className="App">
         {/* {this.state.greeting} */}
-        {this.state.movies.map((movie, index) => {
+        {/* {this.state.movies.map((movie, index) => {
           return <Movie title={movie.title} poster={movie.poster} key={index} />
-        })}
+        })} */}
 
       </div>
     );
