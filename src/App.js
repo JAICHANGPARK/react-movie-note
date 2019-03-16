@@ -42,6 +42,7 @@ class App extends Component {
     //api에 작업 요청
     console.log("componentWillMuount")
   }
+  
   componentDidMount() {
     //render후 작업 처리 
     setTimeout(() => {
