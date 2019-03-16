@@ -1,3 +1,10 @@
+
+Project Site 
+
+http://JAICHANGPARK.github.io/react-movie-note
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
