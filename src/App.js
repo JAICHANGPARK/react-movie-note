@@ -121,13 +121,14 @@ class App extends Component {
   }
 
   render() {
+    const {movies} = this.state;
     return (
-      <div className="App">
+      <div className={movies? "App" : "App--loading"}>
         {/* {this.state.greeting} */}
         {/* {this.state.movies.map((movie, index) => {
           return <Movie title={movie.title} poster={movie.poster} key={index} />
         })} */}
-        {this.state.movies ? this._renderMovies() : 'Loading'}
+        {movies ? this._renderMovies() : 'Loading'}
       </div>
     );
   }

@@ -10,21 +10,20 @@ class Movie extends Component {
         poster: PropTypes.string.isRequired,
         genres: PropTypes.string.isRequired,
         synopsis: PropTypes.string.isRequired,
-
     }
-
+    
     render() {
         console.log(this.props);
         return (
             <div className="Movie">
                 <div className="Movie__Columns">
-                    <MoviePoster poster={this.props.poster} />
+                    <MoviePoster poster={this.props.poster}  alt={this.props.title}/>
                 </div>
                 <div className="Movie__Columns">
                     <h1>{this.props.title} </h1>
                     <div className="Movie__Genres">
                         {this.props.genres.map((genre, index) =>
-                            <MovieGenre genre={genre} key={index}/> )}
+                            <MovieGenre genres={genre} key={index}/> )}
                     </div>
                     <p className="Movie__Synopsis">
                     {this.props.synopsis}
@@ -42,7 +41,7 @@ class Movie extends Component {
 
 function MovieGenre({ genres }) {
     return (
-        <span className="Movie__Genre">{genres}</span>
+        <span className="Movie__Genre">{genres} </span>
     )
 }
 
@@ -56,14 +55,15 @@ function MovieGenre({ genres }) {
 //         )
 //     }
 // }
-function MoviePoster({ poster }) {
+function MoviePoster({ poster, alt }) {
     return (
-        <img src={poster} alt="Movie Poster" />
+        <img src={poster} alt={alt} title ={alt}  className ="Movie__Poster"/>
     )
 }
 
 MoviePoster.propTypes = {
-    poster: PropTypes.number.isRequired
+    poster: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired
 }
 MovieGenre.propTypes = {
     genres: PropTypes.string.isRequired
