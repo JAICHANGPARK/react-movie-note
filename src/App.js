@@ -89,6 +89,7 @@ class App extends Component {
     const movies = this.state.movies.map((movie, index) => {
       return <Movie title={movie.title} poster={movie.poster} key={index} />
     })
+    // const movies = [<Movie props />, <Movie props />]
     return movies
   }
 
@@ -99,7 +100,7 @@ class App extends Component {
         {/* {this.state.movies.map((movie, index) => {
           return <Movie title={movie.title} poster={movie.poster} key={index} />
         })} */}
-
+        {this.state.movies ? this._renderMovies() : 'Loading'}
       </div>
     );
   }
