@@ -60,29 +60,31 @@ class App extends Component {
 
   componentDidMount() {
     //render후 작업 처리 
-    setTimeout(() => {
-      this.setState({
-        movies: [
-          {
-            title: "Matrix",
-            poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
-          },
-          {
-            title: "Matrix",
-            poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
-          },
-          {
-            title: "Matrix",
-            poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
-          },
-        ],
-      })
-      //State는 직접 변경할 수 없고 setState를 통해 데이터 변경 처리 가능 .
-      this.setState({
-        greeting: "someting"
-      })
+    // setTimeout(() => {
+    //   this.setState({
+    //     movies: [
+    //       {
+    //         title: "Matrix",
+    //         poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+    //       },
+    //       {
+    //         title: "Matrix",
+    //         poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+    //       },
+    //       {
+    //         title: "Matrix",
+    //         poster: "https://t1.daumcdn.net/cfile/tistory/99256D3359D0C7D02A"
+    //       },
+    //     ],
+    //   })
+    //   //State는 직접 변경할 수 없고 setState를 통해 데이터 변경 처리 가능 .
+    //   this.setState({
+    //     greeting: "someting"
+    //   })
 
-    }, 5000)
+    // }, 5000)
+
+    fetch("https://yts.am/api/v2/list_movies.json?sort_by=rating")
   }
 
   _renderMovies =() =>{
